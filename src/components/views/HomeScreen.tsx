@@ -13,18 +13,14 @@ interface HomeShortcut {
 }
 
 const HOME_SHORTCUTS: HomeShortcut[] = [
-  { id: 'calculator', name: 'Calculator', icon: 'calc', colorScheme: 'cyan' },
-  { id: 'finance', name: 'Finance', icon: 'finance', colorScheme: 'lime' },
-  { id: 'converter', name: 'Converter', icon: 'conv', colorScheme: 'lime' },
-  { id: 'network', name: 'Network', icon: 'wifi', colorScheme: 'lime' },
-  { id: 'text', name: 'Text Tools', icon: 'text', colorScheme: 'cyan' },
-  { id: 'image', name: 'Image Tools', icon: 'img', colorScheme: 'cyan' },
-  { id: 'qr', name: 'QR & Barcode', icon: 'qr', colorScheme: 'cyan' },
-  { id: 'developer', name: 'Developer', icon: 'code', colorScheme: 'cyan' },
-  { id: 'security', name: 'Security', icon: 'shield', colorScheme: 'cyan' },
-  { id: 'device', name: 'Device Info', icon: 'dev', colorScheme: 'cyan' },
-  { id: 'datetime', name: 'Date & Time', icon: 'clock', colorScheme: 'lime' },
-  { id: 'lab', name: 'Lab', icon: 'flask', colorScheme: 'cyan' },
+  { id: 'calculators-math', name: 'Calculator & Math', icon: 'calc', colorScheme: 'cyan' },
+  { id: 'converters-data', name: 'Converter & Data', icon: 'conv', colorScheme: 'lime' },
+  { id: 'developer-code', name: 'Developer & Code', icon: 'code', colorScheme: 'cyan' },
+  { id: 'text-typing', name: 'Text & Typing', icon: 'text', colorScheme: 'cyan' },
+  { id: 'time-productivity', name: 'Time & Focus', icon: 'clock', colorScheme: 'lime' },
+  { id: 'security-finance', name: 'Security & Finance', icon: 'shield', colorScheme: 'lime' },
+  { id: 'image-media', name: 'Image & Media', icon: 'img', colorScheme: 'cyan' },
+  { id: 'device-network-sensors', name: 'Device & Sensors', icon: 'dev', colorScheme: 'cyan' },
 ];
 
 export const HomeScreen: React.FC = () => {

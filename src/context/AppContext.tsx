@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { store } from '../utils/storage';
-import { TOOL_MAP } from '../data/categoriesData';
+import { TOOL_MAP, CATEGORY_ALIASES } from '../data/categoriesData';
 
 export interface RecentItem {
   id: string;
@@ -97,7 +97,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   });
   const [language, setLanguage] = useState<string>('English');
   const [notifications, setNotifications] = useState<boolean>(true);
-  const [selectedCategory, setSelectedCategory] = useState<string>('calculator');
+  const [selectedCategory, setSelectedCategory] = useState<string>('calculators-math');
   const [categoryFrom, setCategoryFrom] = useState<string>('home');
   const [qrMode, setQrMode] = useState<'scan' | 'gen'>('scan');
   const [toastMessage, setToastMessage] = useState<string | null>(null);
@@ -177,7 +177,8 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
 
   const navigateCategory = useCallback(
     (catId: string, from?: string) => {
-      setSelectedCategory(catId);
+      const resolved = CATEGORY_ALIASES[catId] || catId;
+      setSelectedCategory(resolved);
       if (from) setCategoryFrom(from);
       navigate('cat-detail');
     },
